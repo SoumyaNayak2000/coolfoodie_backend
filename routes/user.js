@@ -21,6 +21,7 @@ router.get(
   "/login",
   passport.authenticate("google", {
     successRedirect: frontend,
+    scope: ["profile"],
   })
 );
 router.get("/me", isAuthenticated, myProfile);
