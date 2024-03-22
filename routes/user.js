@@ -3,6 +3,11 @@ import passport from "passport";
 import { logout, myProfile } from "../controllers/user.js";
 import { isAuthenticated } from "../middlewares/auth.js";
 
+import dotenv from "dotenv";
+dotenv.config({
+  path: "./config/config.env",
+});
+
 const router = express.Router();
 
 router.get(
