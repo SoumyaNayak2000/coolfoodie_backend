@@ -15,16 +15,16 @@ dotenv.config({
   path: "./config/config.env",
 });
 
-// Using Middlewares
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+      secure: false,
       httpOnly: true,
-      sameSite: "none",
+      sameSite: "lax",
     },
   })
 );
